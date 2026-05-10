@@ -1,0 +1,12 @@
+\babel@toc {UKenglish}{}\relax 
+\contentsline {section}{\numberline {1}实验要求}{2}{section.1}%
+\contentsline {section}{\numberline {2}实验原理}{2}{section.2}%
+\contentsline {section}{\numberline {3}实验过程}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}libsnark 环境搭建}{2}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}算术电路设计与拍平}{7}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}电路核心代码实现 (common.hpp)}{7}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}密钥生成程序 (mysetup.cpp)}{8}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}证明生成程序 (myprove.cpp)}{8}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}验证程序 (myverify.cpp)}{9}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}编译运行与配置}{9}{subsection.3.7}%
+\contentsline {section}{\numberline {4}总结}{11}{section.4}%

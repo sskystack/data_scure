@@ -1,0 +1,49 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{random}
+
+\PYG{c+c1}{\PYGZsh{}快速幂计算 a\PYGZca{}b\PYGZpc{}p}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{quickpower}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{a}\PYG{o}{=}\PYG{n}{a}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{l+m+mi}{1}
+    \PYG{k}{while} \PYG{n}{b}\PYG{o}{!=}\PYG{l+m+mi}{0}\PYG{p}{:}
+        \PYG{k}{if} \PYG{n}{b}\PYG{o}{\PYGZam{}}\PYG{l+m+mi}{1}\PYG{p}{:}
+            \PYG{n}{ans}\PYG{o}{=}\PYG{p}{(}\PYG{n}{ans}\PYG{o}{*}\PYG{n}{a}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+        \PYG{n}{b}\PYG{o}{\PYGZgt{}\PYGZgt{}}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{n}{a}\PYG{o}{=}\PYG{p}{(}\PYG{n}{a}\PYG{o}{*}\PYG{n}{a}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+    \PYG{k}{return} \PYG{n}{ans}
+
+\PYG{c+c1}{\PYGZsh{}构建多项式：x0 为常数项系数，T 为最高次项次数，p 为模数,fname 为多项式名}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{get\PYGZus{}polynomial}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n}{fname}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{f}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}
+    \PYG{n}{f}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{f}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{random}\PYG{o}{.}\PYG{n}{randrange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
+    \PYG{c+c1}{\PYGZsh{}输出多项式}
+    \PYG{n}{f\PYGZus{}print}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{+}\PYG{n}{fname}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{+}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{f}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{T}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{f\PYGZus{}print}\PYG{o}{+}\PYG{o}{=}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{+}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{f}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{o}{+}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{x\PYGZca{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{o}{+}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{n}{f\PYGZus{}print}\PYG{p}{)}
+    \PYG{k}{return} \PYG{n}{f}
+
+\PYG{c+c1}{\PYGZsh{}计算多项式值}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{count\PYGZus{}polynomial}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{n}{x}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{n}{f}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{f}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{ans}\PYG{o}{=}\PYG{p}{(}\PYG{n}{ans}\PYG{o}{+}\PYG{n}{f}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{*}\PYG{n}{quickpower}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{i}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+    \PYG{k}{return} \PYG{n}{ans}
+
+\PYG{c+c1}{\PYGZsh{}重构函数 f 并返回 f(0)}
+\PYG{k}{def}\PYG{+w}{ }\PYG{n+nf}{restructure\PYGZus{}polynomial}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{fx}\PYG{p}{,}\PYG{n}{t}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{ans}\PYG{o}{=}\PYG{l+m+mi}{0}
+    \PYG{c+c1}{\PYGZsh{}利用多项式插值法计算出 x=0 时多项式的值}
+    \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}\PYG{p}{:}
+        \PYG{n}{fx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{=}\PYG{n}{fx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+        \PYG{n}{fxi}\PYG{o}{=}\PYG{l+m+mi}{1}
+        \PYG{c+c1}{\PYGZsh{}在模 p 下，(a/b)\PYGZpc{}p=(a*c)\PYGZpc{}p，其中 c 为 b 在模 p 下的逆元，c=b\PYGZca{}(p\PYGZhy{}2)\PYGZpc{}p}
+        \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}\PYG{p}{:}
+            \PYG{k}{if} \PYG{n}{j} \PYG{o}{!=}\PYG{n}{i}\PYG{p}{:}
+                \PYG{n}{fxi}\PYG{o}{=}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{o}{*}\PYG{n}{fxi}\PYG{o}{*}\PYG{n}{x}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{o}{*}\PYG{n}{quickpower}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{,}\PYG{n}{p}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+        \PYG{n}{fxi}\PYG{o}{=}\PYG{p}{(}\PYG{n}{fxi}\PYG{o}{*}\PYG{n}{fx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+        \PYG{n}{ans}\PYG{o}{=}\PYG{p}{(}\PYG{n}{ans}\PYG{o}{+}\PYG{n}{fxi}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+    \PYG{k}{return} \PYG{n}{ans}
+\end{MintedVerbatim}

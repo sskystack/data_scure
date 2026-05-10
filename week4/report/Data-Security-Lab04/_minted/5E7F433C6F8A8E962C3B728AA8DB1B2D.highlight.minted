@@ -1,0 +1,8 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{python3}\PYG{+w}{ }\PYG{n}{count\PYGZus{}student}\PYG{p}{.}\PYG{n}{py}
+\PYG{l+m+mi}{1}
+\PYG{n}{python3}\PYG{+w}{ }\PYG{n}{count\PYGZus{}student}\PYG{p}{.}\PYG{n}{py}
+\PYG{l+m+mi}{2}
+\PYG{n}{python3}\PYG{+w}{ }\PYG{n}{count\PYGZus{}student}\PYG{p}{.}\PYG{n}{py}
+\PYG{l+m+mi}{3}
+\end{MintedVerbatim}

@@ -1,0 +1,17 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{p}\PYG{o}{=}\PYG{l+m+mi}{1000000007}
+\PYG{c+c1}{\PYGZsh{}输入参与方 id}
+\PYG{n+nb}{id}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{请输入参与方 id:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}Student\PYGZus{}id 读取属于自己的秘密份额student\PYGZus{}1\PYGZus{}id.txt,student\PYGZus{}2\PYGZus{}id.txt,student\PYGZus{}3\PYGZus{}id.txt}
+\PYG{n}{data}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{student\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{i}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.txt}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{r}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{}打开文本}
+        \PYG{n}{data}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}读取文本}
+\PYG{c+c1}{\PYGZsh{}计算三个秘密份额的和}
+\PYG{n}{d}\PYG{o}{=}\PYG{l+m+mi}{0}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{d}\PYG{o}{=}\PYG{p}{(}\PYG{n}{d}\PYG{o}{+}\PYG{n}{data}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{o}{\PYGZpc{}}\PYG{n}{p}
+\PYG{c+c1}{\PYGZsh{}将求和后的秘密份额保存到文件 d\PYGZus{}id.txt 内}
+\PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{d\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.txt}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{w}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+    \PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)}\PYG{p}{)}
+\end{MintedVerbatim}

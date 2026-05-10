@@ -1,0 +1,26 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{ss\PYGZus{}function}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{ss\PYGZus{}f}
+\PYG{c+c1}{\PYGZsh{}设置模数 p}
+\PYG{n}{p}\PYG{o}{=}\PYG{l+m+mi}{1000000007}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{模数 p：}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{p}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}输入参与方 id 以及秘密 s}
+\PYG{n+nb}{id}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{请输入参与方 id:}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{s}\PYG{o}{=}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{input}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{请输入 student\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{的投票值 s:}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}秘密份额为(share\PYGZus{}x,share\PYGZus{}y)}
+\PYG{n}{shares\PYGZus{}x}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}
+\PYG{n}{shares\PYGZus{}y}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}
+\PYG{c+c1}{\PYGZsh{}计算多项式及秘密份额(t=2,n=3)}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{Student\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{的投票值的多项式及秘密份额：}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{f}\PYG{o}{=}\PYG{n}{ss\PYGZus{}f}\PYG{o}{.}\PYG{n}{get\PYGZus{}polynomial}\PYG{p}{(}\PYG{n}{s}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{p}\PYG{p}{,}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n+nb}{id}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{temp}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{temp}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{ss\PYGZus{}f}\PYG{o}{.}\PYG{n}{count\PYGZus{}polynomial}\PYG{p}{(}\PYG{n}{f}\PYG{p}{,}\PYG{n}{shares\PYGZus{}x}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}\PYG{p}{)}
+    \PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{(}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{shares\PYGZus{}x}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{,}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{temp}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{)}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+    \PYG{n}{shares\PYGZus{}y}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{temp}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{}Student\PYGZus{}id 将自己的投票值的秘密份额分享给两外两个学生}
+\PYG{c+c1}{\PYGZsh{}将三份秘密份额分别保存到 student\PYGZus{}id\PYGZus{}1.txt,student\PYGZus{}id\PYGZus{}2.txt,student\PYGZus{}id\PYGZus{}3.txt}
+\PYG{c+c1}{\PYGZsh{}Student\PYGZus{}i 获得 Student\PYGZus{}id\PYGZus{}i.txt}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{student\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n+nb}{id}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{i}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.txt}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{w}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:}
+        \PYG{n}{f}\PYG{o}{.}\PYG{n}{write}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{shares\PYGZus{}y}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+\end{MintedVerbatim}

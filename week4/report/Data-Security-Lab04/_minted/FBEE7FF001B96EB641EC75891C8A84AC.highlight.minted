@@ -1,0 +1,6 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{n}{touch}\PYG{+w}{ }\PYG{n}{ss\PYGZus{}function}\PYG{p}{.}\PYG{n}{py}
+\PYG{n}{touch}\PYG{+w}{ }\PYG{n}{ss\PYGZus{}student}\PYG{p}{.}\PYG{n}{py}
+\PYG{n}{touch}\PYG{+w}{ }\PYG{n}{count\PYGZus{}student}\PYG{p}{.}\PYG{n}{py}
+\PYG{n}{touch}\PYG{+w}{ }\PYG{n}{vote\PYGZus{}counter}\PYG{p}{.}\PYG{n}{py}
+\end{MintedVerbatim}

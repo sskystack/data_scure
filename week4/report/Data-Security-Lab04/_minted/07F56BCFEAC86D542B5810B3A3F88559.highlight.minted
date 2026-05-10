@@ -1,0 +1,16 @@
+\begin{MintedVerbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{import}\PYG{+w}{ }\PYG{n+nn}{ss\PYGZus{}function}\PYG{+w}{ }\PYG{k}{as}\PYG{+w}{ }\PYG{n+nn}{ss\PYGZus{}f}
+\PYG{c+c1}{\PYGZsh{}设置模数 p}
+\PYG{n}{p}\PYG{o}{=}\PYG{l+m+mi}{1000000007}
+\PYG{c+c1}{\PYGZsh{}随机选取两个参与方，例如 student2 和 student3，获得 d2,d3，从而恢复出 d=a+b+c}
+\PYG{c+c1}{\PYGZsh{}读取 d2,d3}
+\PYG{n}{d\PYGZus{}23}\PYG{o}{=}\PYG{p}{[}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{:}
+    \PYG{k}{with} \PYG{n+nb}{open}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{d\PYGZus{}}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{i}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{.txt}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{,} \PYG{l+s+s2}{\PYGZdq{}}\PYG{l+s+s2}{r}\PYG{l+s+s2}{\PYGZdq{}}\PYG{p}{)} \PYG{k}{as} \PYG{n}{f}\PYG{p}{:} \PYG{c+c1}{\PYGZsh{}打开文本}
+        \PYG{n}{d\PYGZus{}23}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{f}\PYG{o}{.}\PYG{n}{read}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)} \PYG{c+c1}{\PYGZsh{}读取文本}
+\PYG{c+c1}{\PYGZsh{}加法重构获得 d}
+\PYG{n}{d}\PYG{o}{=}\PYG{n}{ss\PYGZus{}f}\PYG{o}{.}\PYG{n}{restructure\PYGZus{}polynomial}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{n}{d\PYGZus{}23}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{p}\PYG{p}{)}
+\PYG{c+c1}{\PYGZsh{} 这一步是为了计算平均值}
+\PYG{n}{d} \PYG{o}{=} \PYG{n}{d} \PYG{o}{/} \PYG{l+m+mi}{3}
+\PYG{n+nb}{print}\PYG{p}{(}\PYG{l+s+sa}{f}\PYG{l+s+s1}{\PYGZsq{}}\PYG{l+s+s1}{得票结果为：}\PYG{l+s+si}{\PYGZob{}}\PYG{n}{d}\PYG{l+s+si}{\PYGZcb{}}\PYG{l+s+s1}{\PYGZsq{}}\PYG{p}{)}
+\end{MintedVerbatim}
